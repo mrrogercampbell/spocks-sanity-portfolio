@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import sanityClient from '../client'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
-import youngSpockBg from '../assets/young-spock-bg.jpg'
+import youngSpockBg from '../assets/star-fleet.png'
 
 const builder = imageUrlBuilder(sanityClient)
 const urlFor = source => builder.image(source)
@@ -28,8 +28,8 @@ const About = () => {
 
     console.log(author)
     return (
-        <main className='relative'>
-            <img src={youngSpockBg} alr='image of young spock' className='absolute w-full' />
+        <main>
+            <img src={youngSpockBg} alr='image of young spock' className='absolute w-full h-full' />
             <div className='p-10 lg:pt-48 container mx-auto relative'>
                 <section className='bg-green-800 rounded-lg shadow-2xl lg:flex p-20'>
                     <img src={urlFor(author.authorImage).url()} className='rounded w-32 h-32 lg:w-64 lg:h-64 mr-8' alt={author.name} />
